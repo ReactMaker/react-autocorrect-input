@@ -9,7 +9,7 @@ class Demo extends React.Component {
     dataSource: ['apple', 'ask', 'applice', 'best', 'book', 'beep', 'cat', 'can', 'car'],
   }
 
-  onChange = (value) => this.setState({ value })
+  onChange = value => this.setState({ value })
 
   render() {
     const { value, dataSource } = this.state;

@@ -63,13 +63,13 @@ export default class ACInput extends React.Component {
   state = initState
 
   onChange = (e) => {
-    const { dataSource } = this.props;
+    const { dataSource, onChange } = this.props;
     const { value, selectionStart } = e.target;
     // 1. get last keyword
     const lastWord = value.split(' ').pop().toLowerCase();
     if (!lastWord || selectionStart !== value.length) {
       this.setState(initState);
-      this.props.onChange(value);
+      onChange(value);
       return;
     }
     // 2. filter suggest
@@ -80,7 +80,7 @@ export default class ACInput extends React.Component {
     const selectedSuggest = suggest[0] || '';
     // 3. update suggest array
     this.setState({ suggest, selectedSuggest });
-    this.props.onChange(value);
+    onChange(value);
   }
 
   onKeyDown(e) {
@@ -114,7 +114,7 @@ export default class ACInput extends React.Component {
     }
   }
 
-  onClickSuggest = (selectedSuggest) => () => {
+  onClickSuggest = selectedSuggest => () => {
     this.onComplete(selectedSuggest);
     this.inputRef.current.focus();
   }

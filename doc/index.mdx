@@ -3,9 +3,9 @@ name: Getting Start
 route: /
 ---
 
-import { Playground } from 'docz';
+import { Playground, PropsTable } from 'docz';
 import { State } from 'react-powerplug'
-import Input from '../bin/Input.js';
+import Input from '../src/components/Input.js';
 
 # React Autocorrect Input
 
@@ -67,3 +67,6 @@ render(<Main />, document.getElementById('app'));
 </div>
 </Playground>
 
+### Proptypes
+
+<PropsTable of={Input} />
