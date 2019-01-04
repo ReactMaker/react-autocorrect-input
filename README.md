@@ -1,6 +1,6 @@
 # React Autocorrect Input Component
 
-this is a 8 bit style component
+autocorrect input react component
 
 ![screenshoot](screenshot/screenshot.gif)
 
