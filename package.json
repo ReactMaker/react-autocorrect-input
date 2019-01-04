@@ -1,6 +1,6 @@
 {
   "name": "@reactmaker/react-autocorrect-input",
-  "description": "autocorrect input react component",
+  "description": "Autocorrect input react component, suggested text when you type in.",
   "version": "1.0.0",
   "main": "bin/Input.js",
   "repository": {
@@ -20,7 +20,7 @@
     "docz:dev": "docz dev",
     "docz:build": "docz build"
   },
-  "keywords": [],
+  "keywords": ["autocomplete", "autocorrect", "input", "word suggest"],
   "author": "",
   "license": "MIT",
   "dependencies": {

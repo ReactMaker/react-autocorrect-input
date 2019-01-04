@@ -1,6 +1,6 @@
 # React Autocorrect Input Component
 
-autocorrect input react component
+Autocorrect input react component, suggested text when you type in.
 
 ![screenshoot](screenshot/screenshot.gif)
 
