@@ -1,0 +1,69 @@
+---
+name: Getting Start
+route: /
+---
+
+import { Playground } from 'docz';
+import { State } from 'react-powerplug'
+import Input from '../bin/Input.js';
+
+# React Autocorrect Input
+
+auto correct for react input field.
+
+### requirement
+
+- React 16.4^
+
+### Download from NPM
+
+```
+npm install @reactmaker/react-autocorrect-input
+```
+
+### How to use
+
+```javascript
+import React from 'react';
+import { render } from 'react-dom';
+import { hot } from 'react-hot-loader';
+import Input from './components/Input';
+
+class Demo extends React.Component {
+  state = {
+    value: '',
+    dataSource: ['apple', 'ask', 'applice', 'best', 'book', 'beep', 'cat', 'can', 'car'],
+  }
+
+  onChange = (value) => this.setState({ value })
+
+  render() {
+    const { value, dataSource } = this.state;
+    return (
+      <Input onChange={this.onChange} value={value} dataSource={dataSource} />
+    );
+  }
+}
+
+const Main = hot(module)(Demo);
+
+render(<Main />, document.getElementById('app'));
+
+```
+
+### Demo
+
+<Playground>
+<div style={{width: '100%', height: 150}}>
+  <State initial={{value: 'apple is the best food for cat', dataSource: ['apple', 'ask', 'applice', 'best', 'book', 'beep', 'cat', 'can', 'car']}}>
+    {({state, setState}) => (
+        <Input
+          value={state.value}
+          dataSource={state.dataSource}
+          onChange={e => setState({ value: e })}
+        />
+    )}
+  </State>
+</div>
+</Playground>
+
