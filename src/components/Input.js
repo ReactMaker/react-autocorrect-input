@@ -151,7 +151,7 @@ export default class ACInput extends React.PureComponent {
           style={style}
           className={className}
         />
-        <Style.MenuContainer display={displaySuggest} className={menuClassName}>
+        <Style.MenuContainer display={displaySuggest.toString()} className={menuClassName}>
           {
             suggest.map(keyword => (
               <Style.MenuLi
