@@ -57,28 +57,19 @@ const initState = {
   selectedSuggest: '',
 };
 
-export default class ACInput extends React.Component {
+export default class ACInput extends React.PureComponent {
   inputRef = React.createRef()
 
   state = initState
 
   onChange = (e) => {
     const { dataSource, onChange } = this.props;
-    const { value, selectionStart } = e.target;
-    // 1. get last keyword
-    const lastWord = value.split(' ').pop().toLowerCase();
-    if (!lastWord || selectionStart !== value.length) {
-      this.setState(initState);
-      onChange(value);
-      return;
-    }
-    // 2. filter suggest
+    const { value } = e.target;
+    // 1. filter suggest
     const suggest = dataSource
-      .map(keyword => keyword.toLowerCase())
-      .filter(keyword => (keyword.indexOf(lastWord) === 0))
-      .slice(0, 10);
+      .filter(keyword => (keyword.toLowerCase().indexOf(value.toLowerCase()) > -1))
     const selectedSuggest = suggest[0] || '';
-    // 3. update suggest array
+    // 2. update suggest array
     this.setState({ suggest, selectedSuggest });
     onChange(value);
   }
