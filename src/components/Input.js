@@ -67,7 +67,7 @@ export default class ACInput extends React.PureComponent {
     const { value } = e.target;
     // 1. filter suggest
     const suggest = dataSource
-      .filter(keyword => (keyword.toLowerCase().indexOf(value.toLowerCase()) > -1))
+      .filter(keyword => (keyword.toLowerCase().indexOf(value.toLowerCase()) > -1));
     const selectedSuggest = suggest[0] || '';
     // 2. update suggest array
     this.setState({ suggest, selectedSuggest });
